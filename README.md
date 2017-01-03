@@ -1,31 +1,56 @@
-# Awesomenews4000
+# Awesome News System 4000
+This project has been developed as part of the Angular 2 course in Telerik Academy 
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
+## Project aim
+The aim of the project is to give our users the latest news from many sources as soon as they are published. Users can filter the media they prefer and receive information from the sources they prefer.
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Project information
+The project consists of two parts - client and server. The server was not in the requirements for the course, but it was developed for a previous one. A slightly update version of the server has been used for this project. You can find it here : [https://github.com/TeamG3000/Awesome-News-System-4000-Server](https://github.com/TeamG3000/Awesome-News-System-4000-Server). 
 
-## Code scaffolding
+The client is the main part of the project. You can find a live demo here : [http://awesomenews4000.herokuapp.com](http://awesomenews4000.herokuapp.com)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+## Users
+#### Normal access 
+#### Registered - options to leave a comment, rate it, like the article and read it later and filter articles by source
 
-## Build
+## Routes
+#### Normal access
+/home -> every user regardless if they are registered or not can view the latest news from all our sources in convenient form;
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+/article-details -> displays detailed information about the given article. If user is logged in, he/she has the option to add the article to their favourite articles, to comment and to rate them 
 
-## Running unit tests
+/search -> displays the results of the search query based on the user input
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+/about -> displays information about the developers
 
-## Running end-to-end tests
+/top100 -> displays the 100 articles with highest rating 
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+/sources -> displays all the news websites that we are gathering articles from
 
-## Deploying to Github Pages
+/register -> displays a form with which a user can register
 
-Run `ng github-pages:deploy` to deploy to Github Pages.
+/login -> gives the functionality to the registered users to log in
 
-## Further help
 
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#### Registered users
+/user/profile -> displays user profile and gives access to the theme settings
+
+/favourite-articles -> displays the articles the user has liked, also a user can filter them by title
+
+/select-media -> gives the ability to filter the displayed information about media source 
+## Team Members 
+#### [Milena Stancheva](https://github.com/MilStancheva)
+#### [Bozhidar Boevski](https://github.com/kjifw)
+#### [Martin Jordanov](https://github.com/mkjordanov) 
+
+## Project Dependencies
+#### Angular 2
+#### Webpack
+#### Bootstrap
+#### Toaster
+
+## How to use locally
+* Clone or download
+* Run ```npm install``` in the root directory
+* Run ```npm start``` to start the project locally
+* Connect to localhost:3000 to see the magic at work :)
