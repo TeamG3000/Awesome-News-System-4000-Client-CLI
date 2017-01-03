@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="card">
+        <div class="card-block col-sm-12">
+            <h1 class="card-title">About Awesome News 4000</h1>
+            <h3 class="card-subtitle text-muted">The news you want to know</h3>
+        </div>
+        <div class="card-block col-sm-4">
+            <div class="card">
+                <h4 class="card-title">Team Members</h4>
+                <div class="card-block">
+                    <div class="list-group" *ngFor="let member of members">
+                        <a [href]="member.link" target="_blank" class="list-group-item list-group-item-action">{{member.name}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-block col-sm-8">
+        <img class="card-img-top" [src]="logoPath" style="width: 25rem;" alt="Awesome News Logo">
+        <div class="card-block col-sm-6 align-bottom">
+            We are here to let you choose the information you want to receive. With Awesome News 4000 you will be up to date with the
+            latest news from around the world. Just sign up and select the media you want to follow. No adds, just free information.
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="card text-center">
+        <h4 class="card-title">Additional Information</h4>
+        <div class="car-block">
+            <div class="list-group" *ngFor="let item of additionalInformationLinks">
+                <a [href]="item.link" target="_blank" class="list-group-item list-group-item-action">{{item.name}}</a>
+            </div>
+        </div>
+    </div>
+</div>

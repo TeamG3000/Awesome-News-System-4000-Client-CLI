@@ -1,0 +1,16 @@
+<div *ngFor="let article of articles">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="container">
+                <img class="img-responsive simple-article-img" src="{{article.imageUrl}}" alt="image">
+                <h2>
+                    <a [routerLink]="['/article-details', article._id]">{{article.title}}</a>
+                </h2>
+            </div>
+        </div>
+        <div class="panel-footer article-info">published at {{article.publishedAt | date:'medium'}} by <a [routerLink]="['/source-details', article.source]">{{article.source}}</a>
+        </div>
+    </div>
+</div>
+<button (click)="getNextPage()" class="btn btn-primary btn-block">MOAR!!!</button>
+<br>

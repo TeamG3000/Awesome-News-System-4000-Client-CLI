@@ -1,0 +1,47 @@
+<div class="jumbotron">
+    <div class="page-header">
+    <h1>Hello, {{user.username}}!</h1>
+    <h2>It's nice to have you on Awesome News System 4000</h2>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"(click)="isCollapsedContentSelectedMedia = !isCollapsedContentSelectedMedia">
+        <h3 class="panel-title"><span class="glyphicon glyphicon-check" aria-hidden="true"></span> Your selected media</h3>
+    </div>
+    <div class="panel-body" [collapse]="isCollapsedContentSelectedMedia">
+        <ul *ngIf="user.selectedMedia">
+            <li class="user-profile-label" *ngFor="let media of user.selectedMedia">
+                <span class="label label-info">{{media.name}}</span>
+            </li>
+        </ul>
+        <p>Choose the media you'd like to follow to get the latest news from them every day.</p>
+        <p><a class="btn btn-primary btn-lg" role="button" [routerLink]="['/select-media']">Select Media</a></p>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading" (click)="isCollapsedContentFavouriteArticles = !isCollapsedContentFavouriteArticles">
+        <h3 class="panel-title"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span> Your favourite articles</h3>
+    </div>
+    <div class="panel-body" [collapse]="isCollapsedContentFavouriteArticles">
+        <p>Check your favourites. It's easy to read them later.</p>
+        <ul *ngIf="user.favouriteArticles">
+            <li class="user-profile-label" *ngFor="let article of user.favouriteArticles">
+                <span class="label label-info">{{article.title}}</span>
+            </li>
+        </ul>
+        <p><a class="btn btn-primary btn-lg" role="button" [routerLink]="['/favourite-articles']">Read Your Favourite Articles</a></p>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading" (click)="isCollapsedContentUserSettings = !isCollapsedContentUserSettings">
+        <h3 class="panel-title"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Your theme settings</h3>
+    </div>
+    <div class="panel-body" [collapse]="isCollapsedContentUserSettings">
+        <ul *ngIf="user.settings">
+            <li class="user-profile-label" *ngFor="let setting of user.settings">
+                Your theme is: <span class="label label-info">{{setting.theme}}</span>
+            </li>
+        </ul>
+        <p><a class="btn btn-primary btn-lg" role="button" (click)="updateUserTheme()">Change Theme</a></p>
+    </div>
+</div>

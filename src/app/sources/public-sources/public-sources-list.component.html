@@ -1,0 +1,9 @@
+<h1>Awesome Sources</h1>
+
+<div class="row">
+    <div class="col-xs-6 col-md-3" *ngFor="let source of sources">
+        <a href={{source.url}} class="thumbnail">
+            <img class="img-responsive" src={{source.urlsToLogos.small}} alt={{source.name}}>
+        </a>
+    </div>
+</div>

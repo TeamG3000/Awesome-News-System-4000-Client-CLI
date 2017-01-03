@@ -1,0 +1,16 @@
+<p>Showing results for "{{phrase}}"</p>
+<p *ngIf="isEmpty">No articles</p>
+<div *ngFor="let article of searchedArticles">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="container">
+                <img class="img-responsive" src="{{article.imageUrl}}" alt="image">
+                <h2>
+                    <a [routerLink]="['/article-details', article._id]">{{article.title}}</a>
+                </h2>
+            </div>
+        </div>
+        <div class="panel-footer article-info">published at {{article.publishedAt | date:'medium'}} by <a [routerLink]="['/source-details', article.source]">{{article.source}}</a>
+        </div>
+    </div>
+</div>

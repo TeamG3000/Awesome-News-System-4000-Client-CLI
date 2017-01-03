@@ -1,0 +1,30 @@
+<div *ngIf="source">
+    <img class="img-responsive" src="{{source.urlsToLogos.medium}}" width="400">
+    <h1>{{source.name}}</h1>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <p>{{source.description}}</p>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Country</th>
+                    <th>Language</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{source.category | capitalizeFirstLetter}}</td>
+                    <td>{{source.country | uppercase}}</td>
+                    <td>{{source.language | uppercase}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="panel-footer text-right">
+            <a href="{{source.url}}">Visit {{source.name}}' s website</a>
+        </div>
+    </div>
+</div>

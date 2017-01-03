@@ -1,0 +1,8 @@
+ul li {
+    list-style-type: none;
+}
+
+.user-profile-label{
+    display: inline-block;
+    margin: 0.5%;
+}

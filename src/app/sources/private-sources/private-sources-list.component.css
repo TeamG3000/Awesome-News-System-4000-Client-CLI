@@ -1,0 +1,27 @@
+#sort-form {
+    padding-bottom: 7%;
+    margin: 1%;
+}
+
+.source-container-main{
+    padding: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.source-container {
+    margin: 0;
+    width: 100%;
+}
+
+.source-container > p {
+    margin: 0;
+    width: 100%;
+}
+
+.label-img {
+    margin: 2%;
+    max-width: 100%; 
+    display:block; 
+    height: auto;
+}

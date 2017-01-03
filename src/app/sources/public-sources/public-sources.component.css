@@ -1,0 +1,7 @@
+.thumbnail {
+    border: none;
+}
+
+.thumbnail:hover {
+    border: 1px solid steelblue;
+}

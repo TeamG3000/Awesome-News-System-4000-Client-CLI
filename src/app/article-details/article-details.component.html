@@ -1,0 +1,63 @@
+<div>
+    <h1 class="col-lg-8">{{article?.title}}</h1>
+    <h3 class="col-lg-8">{{article?.publishedAt | date:'medium'}}</h3>
+
+    <div class="panel panel-default col-lg-12 content">
+        <div class="col-lg-6">
+            <img class="img-responsive" src={{article?.imageUrl}} alt="image" witdh="400px">
+        </div>
+        <div class="panel panel-default col-lg-6">
+            By: {{article?.author}}
+        </div>
+        <div class="panel panel-default col-lg-6">
+            Source: {{article?.source}}
+        </div>
+        <div class="panel panel-default col-lg-6">
+            {{article?.description}}
+        </div>
+        <div class="panel panel-default col-lg-6">
+            <a href="{{article?.url}}">
+                 Read more
+            </a>
+        </div>
+        <div class="panel col-lg-6">
+            <span>Rating: {{article?.rating | number:'1.2-2'}} / 5</span>
+            <star-rating [rating]='article?.rating'>
+            </star-rating>
+        </div>
+        <div *ngIf="userExists" class="panel col-lg-6">
+            <select class="form-control" required [(ngModel)]="articleRatingToAdd">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+            <button class="btn btn-success" type="submit" [@ratingState]="ratingState" (click)="onSubmitRating()">Add Rating</button>
+        </div>
+    </div>
+    <div *ngIf="userExists" class="panel col-lg-6 content">
+        <div class="col-lg-6">
+            <button class="btn btn-success" type="submit" [@favouritesState]="favouritesState" (click)="onAddToFavourites()">Add To Favourites</button>
+        </div>
+    </div>
+    <div *ngIf="userExists" class="panel panel-default col-lg-12 content">
+        <textarea class="form-control" [(ngModel)]="articleCommentToAdd"></textarea>
+        <button class="btn btn-success" type="submit" [@commentState]="commentState" (click)="onAddCommentToArticle()">Add Comment</button>
+    </div>
+    <div class="panel col-lg-12 content">
+        <h3>Comments</h3>
+        <div *ngIf="article?.comments.length === 0">
+            No comments
+        </div>
+        <div *ngIf="article?.comments">
+            <div *ngFor="let comment of article?.comments" class="panel panel-default col-lg-12">
+                <div class="panel col-lg-12">{{comment.content}}</div>
+                <div class="panel col-lg-1">Author: </div>
+                <div class="panel col-lg-5 pull-left">{{comment.author}}</div>
+                <div class="panel col-lg-1">Date: </div>
+                <div class="panel col-lg-5 pull-left">{{comment.date | date:'medium'}}</div>
+            </div>
+        </div>
+    </div>
+</div>
